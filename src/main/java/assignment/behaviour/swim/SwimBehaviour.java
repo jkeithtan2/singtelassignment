@@ -1,4 +1,4 @@
-package assignment.animal.behaviour.swim;
+package assignment.behaviour.swim;
 
 public interface SwimBehaviour {
     String swim();

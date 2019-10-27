@@ -1,4 +1,4 @@
-package assignment.animal.behaviour.swim;
+package assignment.behaviour.swim;
 
 public class SwimCan implements SwimBehaviour {
     @Override

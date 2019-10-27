@@ -1,4 +1,4 @@
-package assignment.animal.behaviour.walk;
+package assignment.behaviour.walk;
 
 public class WalkCan implements WalkBehaviour {
     @Override

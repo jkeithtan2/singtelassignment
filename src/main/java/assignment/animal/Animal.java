@@ -1,15 +1,16 @@
 package assignment.animal;
 
-import assignment.animal.behaviour.fly.FlyBehaviour;
-import assignment.animal.behaviour.sing.SingBehaviour;
-import assignment.animal.behaviour.sound.SoundMakesBehaviour;
-import assignment.animal.behaviour.swim.SwimBehaviour;
-import assignment.animal.behaviour.walk.WalkBehaviour;
+import assignment.behaviour.fly.FlyBehaviour;
+import assignment.behaviour.sing.SingBehaviour;
+import assignment.behaviour.sound.SoundMakesBehaviour;
+import assignment.behaviour.swim.SwimBehaviour;
+import assignment.behaviour.walk.WalkBehaviour;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-
+@AllArgsConstructor
 @Builder
 @Getter @Setter
 public class Animal {

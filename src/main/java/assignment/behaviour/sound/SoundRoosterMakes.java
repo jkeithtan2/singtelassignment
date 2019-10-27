@@ -1,4 +1,4 @@
-package assignment.animal.behaviour.sound;
+package assignment.behaviour.sound;
 
 public class SoundRoosterMakes implements SoundMakesBehaviour {
     @Override

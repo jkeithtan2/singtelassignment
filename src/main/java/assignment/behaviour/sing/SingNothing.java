@@ -1,4 +1,4 @@
-package assignment.animal.behaviour.sing;
+package assignment.behaviour.sing;
 
 public class SingNothing implements SingBehaviour {
     @Override

@@ -1,4 +1,4 @@
-package assignment.animal.behaviour.fly;
+package assignment.behaviour.fly;
 
 public class FlyCannot implements FlyBehaviour {
     @Override

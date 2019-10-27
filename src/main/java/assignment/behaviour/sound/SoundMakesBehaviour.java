@@ -1,4 +1,4 @@
-package assignment.animal.behaviour.sound;
+package assignment.behaviour.sound;
 
 public interface SoundMakesBehaviour {
     String soundMakes();

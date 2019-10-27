@@ -1,14 +1,14 @@
 package assignment.animal;
 
-import assignment.animal.behaviour.fly.FlyCannot;
-import assignment.animal.behaviour.fly.FlyWithWings;
-import assignment.animal.behaviour.sing.SingBirdSongs;
-import assignment.animal.behaviour.sing.SingNothing;
-import assignment.animal.behaviour.sound.*;
-import assignment.animal.behaviour.swim.SwimCan;
-import assignment.animal.behaviour.swim.SwimCannot;
-import assignment.animal.behaviour.walk.WalkCan;
-import assignment.animal.behaviour.walk.WalkCannot;
+import assignment.behaviour.fly.FlyCannot;
+import assignment.behaviour.fly.FlyWithWings;
+import assignment.behaviour.sing.SingBirdSongs;
+import assignment.behaviour.sing.SingNothing;
+import assignment.behaviour.sound.*;
+import assignment.behaviour.swim.SwimCan;
+import assignment.behaviour.swim.SwimCannot;
+import assignment.behaviour.walk.WalkCan;
+import assignment.behaviour.walk.WalkCannot;
 
 
 public class AnimalFactory {
@@ -51,6 +51,8 @@ public class AnimalFactory {
             case "chicken":
             case "rooster":
                 return createChickenOrRooster(animal);
+            case "fish":
+                return new Fish("fish", Gender.FEMALE);
         }
         return Animal.builder()
                 .name("default animal")

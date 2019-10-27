@@ -3,7 +3,7 @@ package assignment;
 import assignment.animal.Animal;
 import assignment.animal.AnimalCategory;
 import assignment.animal.AnimalFactory;
-import assignment.animal.behaviour.sound.SoundPhoneMakes;
+import assignment.behaviour.sound.SoundPhoneMakes;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -80,5 +80,15 @@ class TestAnimalProperties {
     void parrot_shouldRingWhenLivingWithPhone() {
         Animal parrotThatLivesWithPhone = AnimalFactory.createParrot(new SoundPhoneMakes());
         assertEquals("Ring, ring", parrotThatLivesWithPhone.soundMakes());
+    }
+    
+    @Test
+    void fish_shouldSwim_shouldNotWalkSingFly() {
+        Animal fish = AnimalFactory.createAnimal("fish");
+        assertEquals("fish", fish.getName());
+        assertEquals("no songs sung", fish.sing());
+        assertEquals("cannot walk", fish.walk());
+        assertEquals("cannot fly", fish.fly());
+        assertEquals("can swim", fish.swim());
     }
 }
