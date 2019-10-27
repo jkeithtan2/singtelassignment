@@ -3,7 +3,10 @@ package assignment;
 import assignment.animal.Animal;
 import assignment.animal.AnimalCategory;
 import assignment.animal.AnimalFactory;
+import assignment.behaviour.sound.SoundCatMakes;
+import assignment.behaviour.sound.SoundDogMakes;
 import assignment.behaviour.sound.SoundPhoneMakes;
+import assignment.behaviour.sound.SoundRoosterMakes;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -54,25 +57,19 @@ class TestAnimalProperties {
 
     @Test
     void parrot_shouldWoofWhenLivingWithDog() {
-        Animal parrotThatLivesWithDog = AnimalFactory.createParrot(
-                AnimalFactory.createAnimal("dog").getSoundMakesBehaviour()
-        );
+        Animal parrotThatLivesWithDog = AnimalFactory.createParrot(new SoundDogMakes());
         assertEquals("Woof, woof", parrotThatLivesWithDog.soundMakes());
     }
 
     @Test
     void parrot_shouldMeowWhenLivingWithCat() {
-        Animal parrotThatLivesWithCat = AnimalFactory.createParrot(
-                AnimalFactory.createAnimal("cat").getSoundMakesBehaviour()
-        );
+        Animal parrotThatLivesWithCat = AnimalFactory.createParrot(new SoundCatMakes());
         assertEquals("Meow", parrotThatLivesWithCat.soundMakes());
     }
 
     @Test
     void parrot_shouldCockADoodlwDooWhenLivingWithRooster() {
-        Animal parrotThatLivesWithRooster = AnimalFactory.createParrot(
-                AnimalFactory.createAnimal("rooster").getSoundMakesBehaviour()
-        );
+        Animal parrotThatLivesWithRooster = AnimalFactory.createParrot(new SoundRoosterMakes());
         assertEquals("Cock-a-doodle-doo", parrotThatLivesWithRooster.soundMakes());
     }
 
@@ -90,5 +87,11 @@ class TestAnimalProperties {
         assertEquals("cannot walk", fish.walk());
         assertEquals("cannot fly", fish.fly());
         assertEquals("can swim", fish.swim());
+    }
+
+    @Test
+    void shark_shouldHaveUniqueFeatures() {
+        Animal shark = AnimalFactory.createAnimal("shark");
+        assertEquals("large, grey and eats other fishes", shark.features());
     }
 }

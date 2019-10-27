@@ -7,6 +7,8 @@ import assignment.behaviour.sing.SingNothing;
 import assignment.behaviour.sound.*;
 import assignment.behaviour.swim.SwimCan;
 import assignment.behaviour.swim.SwimCannot;
+import assignment.behaviour.uniquefeatures.UniqueClownfishFeatures;
+import assignment.behaviour.uniquefeatures.UniqueSharkFeatures;
 import assignment.behaviour.walk.WalkCan;
 import assignment.behaviour.walk.WalkCannot;
 
@@ -19,7 +21,6 @@ public class AnimalFactory {
                 return Animal.builder()
                         .name("dog")
                         .category(AnimalCategory.UNCLASSIFIED)
-                        .gender(Gender.FEMALE)
                         .flyBehaviour(new FlyCannot())
                         .singBehaviour(new SingNothing())
                         .swimBehaviour(new SwimCannot())
@@ -30,7 +31,6 @@ public class AnimalFactory {
                 return Animal.builder()
                         .name("cat")
                         .category(AnimalCategory.UNCLASSIFIED)
-                        .gender(Gender.FEMALE)
                         .flyBehaviour(new FlyCannot())
                         .singBehaviour(new SingNothing())
                         .swimBehaviour(new SwimCannot())
@@ -41,7 +41,6 @@ public class AnimalFactory {
                 return Animal.builder()
                         .name("duck")
                         .category(AnimalCategory.BIRD)
-                        .gender(Gender.FEMALE)
                         .flyBehaviour(new FlyWithWings())
                         .singBehaviour(new SingBirdSongs())
                         .swimBehaviour(new SwimCan())
@@ -52,11 +51,12 @@ public class AnimalFactory {
             case "rooster":
                 return createChickenOrRooster(animal);
             case "fish":
-                return new Fish("fish", Gender.FEMALE);
+            case "shark":
+            case "clownfish":
+                return createFish(animal);
         }
         return Animal.builder()
                 .name("default animal")
-                .gender(Gender.FEMALE)
                 .flyBehaviour(new FlyCannot())
                 .singBehaviour(new SingNothing())
                 .swimBehaviour(new SwimCannot())
@@ -92,6 +92,31 @@ public class AnimalFactory {
             animal.setGender(Gender.FEMALE);
             animal.setName("chicken");
             animal.setSoundMakesBehaviour(new SoundChickenMakes());
+        }
+        return animal;
+    }
+
+    private static Animal createFish(String type) {
+        Animal animal = Animal.builder()
+                .category(AnimalCategory.FISH)
+                .flyBehaviour(new FlyCannot())
+                .singBehaviour(new SingNothing())
+                .swimBehaviour(new SwimCan())
+                .walkBehaviour(new WalkCannot())
+                .soundMakesBehaviour(new SoundSilence())
+                .build();
+        switch(type) {
+            case "fish":
+                animal.setName("fish");
+                break;
+            case "shark":
+                animal.setName("shark");
+                animal.setUniqueFeatures(new UniqueSharkFeatures());
+                break;
+            case "clownfish":
+                animal.setName("clownfish");
+                animal.setUniqueFeatures(new UniqueClownfishFeatures());
+                break;
         }
         return animal;
     }
