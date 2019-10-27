@@ -30,6 +30,17 @@ class TestAnimalProperties {
     }
 
     @Test
+    void rooster_shouldNotFlySwim_ShouldWalkSing_BelongsToBirds_clucks() {
+        Animal rooster = AnimalFactory.createAnimal("rooster");
+        assertEquals("birdsongs sung", rooster.sing());
+        assertEquals("can walk", rooster.walk());
+        assertEquals("cannot fly", rooster.fly());
+        assertEquals("cannot swim", rooster.swim());
+        assertEquals("Cock-a-doodle-doo", rooster.soundMakes());
+        assertEquals( AnimalCategory.BIRD, rooster.getCategory());
+    }
+
+    @Test
     void duck_shouldFlySwimWalkSing_BelongsToBirds_quacks() {
         Animal duck = AnimalFactory.createAnimal("duck");
         assertEquals("birdsongs sung", duck.sing());
