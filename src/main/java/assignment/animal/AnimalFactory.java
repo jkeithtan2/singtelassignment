@@ -25,7 +25,7 @@ public class AnimalFactory {
                         .flyBehaviour(new FlyCannot())
                         .singBehaviour(new SingNothing())
                         .swimBehaviour(new SwimCannot())
-                        .walkBehaviour(new WalkCannot())
+                        .walkBehaviour(new WalkCan())
                         .soundMakesBehaviour(new SoundDogMakes())
                         .build();
             case "cat":
@@ -35,7 +35,7 @@ public class AnimalFactory {
                         .flyBehaviour(new FlyCannot())
                         .singBehaviour(new SingNothing())
                         .swimBehaviour(new SwimCannot())
-                        .walkBehaviour(new WalkCannot())
+                        .walkBehaviour(new WalkCan())
                         .soundMakesBehaviour(new SoundCatMakes())
                         .build();
             case "duck":
@@ -65,7 +65,7 @@ public class AnimalFactory {
                         .flyBehaviour(new FlyWithWings())
                         .singBehaviour(new SingNothing())
                         .swimBehaviour(new SwimCannot())
-                        .walkBehaviour(new WalkCannot())
+                        .walkBehaviour(new WalkCan())
                         .soundMakesBehaviour(new SoundSilence())
                         .build();
             case "caterpillar":
@@ -86,6 +86,8 @@ public class AnimalFactory {
             case "shark":
             case "clownfish":
                 return createFish(animal);
+            case "parrot":
+                return createParrot(null);
         }
         return Animal.builder()
                 .name("default animal")

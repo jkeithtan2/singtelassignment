@@ -6,6 +6,6 @@ import assignment.animal.AnimalFactory;
 public class CaterpillarGrowth implements GrowthBehaviour {
     @Override
     public Animal morphTo() {
-        return AnimalFactory.createAnimal("buttefly");
+        return AnimalFactory.createAnimal("butterfly");
     }
 }

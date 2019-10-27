@@ -9,6 +9,11 @@ import assignment.behaviour.sound.SoundPhoneMakes;
 import assignment.behaviour.sound.SoundRoosterMakes;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestAnimalProperties {
@@ -93,5 +98,30 @@ class TestAnimalProperties {
     void shark_shouldHaveUniqueFeatures() {
         Animal shark = AnimalFactory.createAnimal("shark");
         assertEquals("large, grey and eats other fishes", shark.features());
+    }
+
+    @Test
+    void butterfly_shouldGrowFromCaterpillar() {
+        Animal caterpillar = AnimalFactory.createAnimal("caterpillar");
+        assertEquals("butterfly", caterpillar.morphTo().getName());
+    }
+
+    @Test
+    void assertAnimalNumbersOfType() {
+        List<String> animals = new ArrayList<>(
+                Arrays.asList("duck", "chicken", "parrot", "rooster", "clownfish",
+                        "shark", "butterfly", "cat", "caterpillar", "dog", "dolphin"));
+        List<Animal> animalsObjList = animals.stream()
+                .map(
+                        AnimalFactory::createAnimal
+                ).collect(Collectors.toList());
+        assertEquals(3,
+                AnimalUtils.animalCounterByCondition(animalsObjList, "canfly"));
+        assertEquals(8,
+                AnimalUtils.animalCounterByCondition(animalsObjList, "canwalk"));
+        assertEquals(4,
+                AnimalUtils.animalCounterByCondition(animalsObjList, "cansing"));
+        assertEquals(4,
+                AnimalUtils.animalCounterByCondition(animalsObjList, "canswim"));
     }
 }
