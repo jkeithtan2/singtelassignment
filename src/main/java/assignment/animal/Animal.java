@@ -2,6 +2,7 @@ package assignment.animal;
 
 import assignment.animal.behaviour.fly.FlyBehaviour;
 import assignment.animal.behaviour.sing.SingBehaviour;
+import assignment.animal.behaviour.sound.SoundMakesBehaviour;
 import assignment.animal.behaviour.swim.SwimBehaviour;
 import assignment.animal.behaviour.walk.WalkBehaviour;
 import lombok.Builder;
@@ -20,6 +21,7 @@ public class Animal {
     private WalkBehaviour walkBehaviour;
     private SwimBehaviour swimBehaviour;
     private FlyBehaviour flyBehaviour;
+    private SoundMakesBehaviour soundMakesBehaviour;
 
 
     public String sing() {
@@ -36,5 +38,9 @@ public class Animal {
 
     public String fly() {
         return flyBehaviour.fly();
+    }
+
+    public String soundMakes() {
+        return soundMakesBehaviour.soundMakes();
     }
 }

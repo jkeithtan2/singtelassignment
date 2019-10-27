@@ -4,6 +4,8 @@ import assignment.animal.behaviour.fly.FlyCannot;
 import assignment.animal.behaviour.fly.FlyWithWings;
 import assignment.animal.behaviour.sing.SingBirdSongs;
 import assignment.animal.behaviour.sing.SingNothing;
+import assignment.animal.behaviour.sound.SoundChickenMakes;
+import assignment.animal.behaviour.sound.SoundDuckMakes;
 import assignment.animal.behaviour.swim.SwimCan;
 import assignment.animal.behaviour.swim.SwimCannot;
 import assignment.animal.behaviour.walk.WalkCan;
@@ -22,6 +24,7 @@ public class AnimalFactory {
                         .singBehaviour(new SingBirdSongs())
                         .swimBehaviour(new SwimCan())
                         .walkBehaviour(new WalkCan())
+                        .soundMakesBehaviour(new SoundDuckMakes())
                         .build();
             case "chicken":
                 return Animal.builder()
@@ -32,6 +35,7 @@ public class AnimalFactory {
                         .singBehaviour(new SingBirdSongs())
                         .swimBehaviour(new SwimCannot())
                         .walkBehaviour(new WalkCan())
+                        .soundMakesBehaviour(new SoundChickenMakes())
                         .build();
         }
         return Animal.builder()
