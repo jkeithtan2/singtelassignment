@@ -1,5 +1,5 @@
 package assignment.animal;
 
 public enum AnimalCategory {
-    BIRD
+    BIRD, UNCLASSIFIED
 }

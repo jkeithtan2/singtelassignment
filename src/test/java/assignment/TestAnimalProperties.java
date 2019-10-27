@@ -3,6 +3,7 @@ package assignment;
 import assignment.animal.Animal;
 import assignment.animal.AnimalCategory;
 import assignment.animal.AnimalFactory;
+import assignment.animal.behaviour.sound.SoundPhoneMakes;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -51,4 +52,33 @@ class TestAnimalProperties {
         assertEquals( AnimalCategory.BIRD, duck.getCategory());
     }
 
+    @Test
+    void parrot_shouldWoofWhenLivingWithDog() {
+        Animal parrotThatLivesWithDog = AnimalFactory.createParrot(
+                AnimalFactory.createAnimal("dog").getSoundMakesBehaviour()
+        );
+        assertEquals("Woof, woof", parrotThatLivesWithDog.soundMakes());
+    }
+
+    @Test
+    void parrot_shouldMeowWhenLivingWithCat() {
+        Animal parrotThatLivesWithCat = AnimalFactory.createParrot(
+                AnimalFactory.createAnimal("cat").getSoundMakesBehaviour()
+        );
+        assertEquals("Meow", parrotThatLivesWithCat.soundMakes());
+    }
+
+    @Test
+    void parrot_shouldCockADoodlwDooWhenLivingWithRooster() {
+        Animal parrotThatLivesWithRooster = AnimalFactory.createParrot(
+                AnimalFactory.createAnimal("rooster").getSoundMakesBehaviour()
+        );
+        assertEquals("Cock-a-doodle-doo", parrotThatLivesWithRooster.soundMakes());
+    }
+
+    @Test
+    void parrot_shouldRingWhenLivingWithPhone() {
+        Animal parrotThatLivesWithPhone = AnimalFactory.createParrot(new SoundPhoneMakes());
+        assertEquals("Ring, ring", parrotThatLivesWithPhone.soundMakes());
+    }
 }
