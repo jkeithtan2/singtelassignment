@@ -2,6 +2,7 @@ package assignment.animal;
 
 import assignment.behaviour.fly.FlyCannot;
 import assignment.behaviour.fly.FlyWithWings;
+import assignment.behaviour.growth.CaterpillarGrowth;
 import assignment.behaviour.sing.SingBirdSongs;
 import assignment.behaviour.sing.SingNothing;
 import assignment.behaviour.sound.*;
@@ -56,6 +57,27 @@ public class AnimalFactory {
                         .swimBehaviour(new SwimCan())
                         .walkBehaviour(new WalkCannot())
                         .soundMakesBehaviour(new SoundSilence())
+                        .build();
+            case "butterfly":
+                return Animal.builder()
+                        .name("butterfly")
+                        .category(AnimalCategory.UNCLASSIFIED)
+                        .flyBehaviour(new FlyWithWings())
+                        .singBehaviour(new SingNothing())
+                        .swimBehaviour(new SwimCannot())
+                        .walkBehaviour(new WalkCannot())
+                        .soundMakesBehaviour(new SoundSilence())
+                        .build();
+            case "caterpillar":
+                return Animal.builder()
+                        .name("caterpillar")
+                        .category(AnimalCategory.UNCLASSIFIED)
+                        .flyBehaviour(new FlyCannot())
+                        .singBehaviour(new SingNothing())
+                        .swimBehaviour(new SwimCannot())
+                        .walkBehaviour(new WalkCan())
+                        .soundMakesBehaviour(new SoundSilence())
+                        .growthBehaviour(new CaterpillarGrowth())
                         .build();
             case "chicken":
             case "rooster":

@@ -1,6 +1,7 @@
 package assignment.animal;
 
 import assignment.behaviour.fly.FlyBehaviour;
+import assignment.behaviour.growth.GrowthBehaviour;
 import assignment.behaviour.sing.SingBehaviour;
 import assignment.behaviour.sound.SoundMakesBehaviour;
 import assignment.behaviour.swim.SwimBehaviour;
@@ -28,6 +29,7 @@ public class Animal {
     private FlyBehaviour flyBehaviour;
     private SoundMakesBehaviour soundMakesBehaviour;
     private UniqueFeatures uniqueFeatures;
+    private GrowthBehaviour growthBehaviour;
 
 
     public String sing() {
@@ -52,5 +54,9 @@ public class Animal {
 
     public String features() {
         return uniqueFeatures.features();
+    }
+
+    public Animal morphTo() {
+        return growthBehaviour.morphTo();
     }
 }
