@@ -8,11 +8,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Builder
 @Getter @Setter
 public class Animal {
 
     private String name;
+    private AnimalCategory category;
     private Gender gender;
     private SingBehaviour singBehaviour;
     private WalkBehaviour walkBehaviour;
