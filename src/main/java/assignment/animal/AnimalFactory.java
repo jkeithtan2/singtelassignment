@@ -47,6 +47,16 @@ public class AnimalFactory {
                         .walkBehaviour(new WalkCan())
                         .soundMakesBehaviour(new SoundDuckMakes())
                         .build();
+            case "dolphin":
+                return Animal.builder()
+                        .name("dolphin")
+                        .category(AnimalCategory.UNCLASSIFIED)
+                        .flyBehaviour(new FlyCannot())
+                        .singBehaviour(new SingNothing())
+                        .swimBehaviour(new SwimCan())
+                        .walkBehaviour(new WalkCannot())
+                        .soundMakesBehaviour(new SoundSilence())
+                        .build();
             case "chicken":
             case "rooster":
                 return createChickenOrRooster(animal);
