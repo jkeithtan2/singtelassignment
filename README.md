@@ -1,5 +1,7 @@
 Code took slighlty longer than an hour and a half because of drawing of UML diagram and
-writing of README file.
+writing of README file. Check-in on second day was minor cleanup for Fish class builder readability
+and editing of README file. 
+This involved about 10 minutes of work
 
 Animals was composed of multiple behaviors, flying, swimming, singing, makingsounds, 
 possessing unique features and walking. 

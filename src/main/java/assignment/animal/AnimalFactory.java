@@ -12,6 +12,7 @@ import assignment.behaviour.uniquefeatures.UniqueClownfishFeatures;
 import assignment.behaviour.uniquefeatures.UniqueSharkFeatures;
 import assignment.behaviour.walk.WalkCan;
 import assignment.behaviour.walk.WalkCannot;
+import com.sun.scenario.animation.shared.AnimationAccessor;
 
 
 public class AnimalFactory {
@@ -131,14 +132,7 @@ public class AnimalFactory {
     }
 
     private static Animal createFish(String type) {
-        Animal animal = Animal.builder()
-                .category(AnimalCategory.FISH)
-                .flyBehaviour(new FlyCannot())
-                .singBehaviour(new SingNothing())
-                .swimBehaviour(new SwimCan())
-                .walkBehaviour(new WalkCannot())
-                .soundMakesBehaviour(new SoundSilence())
-                .build();
+        Animal animal = Fish.fishBuilder().build();
         switch(type) {
             case "fish":
                 animal.setName("fish");

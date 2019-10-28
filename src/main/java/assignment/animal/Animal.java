@@ -31,7 +31,6 @@ public class Animal {
     private UniqueFeatures uniqueFeatures;
     private GrowthBehaviour growthBehaviour;
 
-
     public String sing() {
         return singBehaviour.sing();
     }
