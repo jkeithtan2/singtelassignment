@@ -14,14 +14,12 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @Builder
+@Getter
 @Setter
 public class Animal {
 
-    @Getter
     private String name;
-    @Getter
     private AnimalCategory category;
-    @Getter
     private Gender gender;
     private SingBehaviour singBehaviour;
     private WalkBehaviour walkBehaviour;
@@ -55,7 +53,11 @@ public class Animal {
         return uniqueFeatures.features();
     }
 
-    public Animal morphTo() {
+    public String morphTo() {
         return growthBehaviour.morphTo();
+    }
+
+    public String morphFrom() {
+        return growthBehaviour.morphFrom();
     }
 }

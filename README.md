@@ -1,5 +1,6 @@
 Code took slighlty longer than an hour and a half because of drawing of UML diagram and
-writing of README file. Check-in on second day was minor cleanup for Fish class builder readability
+writing of README file. Check-in on second day was minor cleanup for Factory classes to add 
+maintainability and readability
 and editing of README file. 
 This involved about 10 minutes of work
 
